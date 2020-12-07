@@ -97,7 +97,7 @@ When the client makes a `POST` request to `/api/posts/:id/comments`:
   - respond with HTTP status code `500`.
   - return the following JSON object: `{ error: "The post information could not be retrieved." }`. -->
 
-When the client makes a `GET` request to `/api/posts/:id/comments`:
+<!-- When the client makes a `GET` request to `/api/posts/:id/comments`:
 
 - If the _post_ with the specified `id` is not found:
 
@@ -107,9 +107,9 @@ When the client makes a `GET` request to `/api/posts/:id/comments`:
 - If there's an error in retrieving the _comments_ from the database:
   - cancel the request.
   - respond with HTTP status code `500`.
-  - return the following JSON object: `{ error: "The comments information could not be retrieved." }`.
+  - return the following JSON object: `{ error: "The comments information could not be retrieved." }`. -->
 
-When the client makes a `DELETE` request to `/api/posts/:id`:
+<!-- When the client makes a `DELETE` request to `/api/posts/:id`:
 
 - If the _post_ with the specified `id` is not found:
 
@@ -119,7 +119,7 @@ When the client makes a `DELETE` request to `/api/posts/:id`:
 - If there's an error in removing the _post_ from the database:
   - cancel the request.
   - respond with HTTP status code `500`.
-  - return the following JSON object: `{ error: "The post could not be removed" }`.
+  - return the following JSON object: `{ error: "The post could not be removed" }`. -->
 
 <!-- When the client makes a `PUT` request to `/api/posts/:id`:
 

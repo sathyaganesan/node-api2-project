@@ -1,12 +1,12 @@
 const express = require('express');
-const userRouter = require("./data/user/usersPosts");
+const postRouter = require("./data/user/usersPosts");
 
 const server = express();
 
 const port = 4000;
 
 server.use(express.json());
-server.use(userRouter);
+server.use(postRouter);
 
 server.get('/', (req, res) => {
     res.json({

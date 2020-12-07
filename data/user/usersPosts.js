@@ -98,4 +98,43 @@ router.delete("/api/posts/:id", (req, res) => {
         })
 })
 
+router.get("/api/posts/:id/comments", (req, res) => {
+    posts.findPostComments(req.params.id)
+        .then((posts) => {
+                res.status(200).json(posts);
+        })
+        .catch((error) => {
+            console.log(error);
+            res.status(500).json({
+                message: "The comments information could not be retrieved."
+            })
+        })
+})
+
+router.post("/api/posts/:id/comments", (req, res) => {
+    // if (!req.params.id) {
+    //     return res.status(404).json({
+    //         message: "The post with the specified ID does not exist."
+    //     });
+    // }
+    posts.insertComment(req.body)
+        .then((post) => {
+            if (!req.body.text || !req.body.post_id) {
+                res.status(400).json({
+                    Message: "Please provide text and post ID for the comment."
+                })
+            } else {
+                res.status(201).json(post)
+            }
+        })
+        .catch((error) => {
+            console.log(error);
+            res.status(500).json({
+                message: "There was an error while saving the comment to the database" 
+            })
+        })
+
+})
+
+
 module.exports = router;
